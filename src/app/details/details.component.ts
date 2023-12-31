@@ -3,9 +3,6 @@ import { ActivatedRoute } from '@angular/router';
 import { MovieService } from '../services/movie-service.service';
 import { MovieDetails } from '../model/movie.model';
 import { CommonModule } from '@angular/common';
-import { Editor, NgxEditorModule } from 'ngx-editor';
-import { FormsModule } from '@angular/forms';
-import { EditorComponent } from '../editor/editor.component';
 
 @Component({
   selector: 'app-details',

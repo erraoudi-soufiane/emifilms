@@ -3,18 +3,11 @@ import { CommonModule } from '@angular/common';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { MovieService } from './services/movie-service.service';
-import { NgxEditorModule } from 'ngx-editor';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [
-    CommonModule,
-    RouterOutlet,
-    RouterLink,
-    HttpClientModule,
-    NgxEditorModule,
-  ],
+  imports: [CommonModule, RouterOutlet, RouterLink, HttpClientModule],
   providers: [MovieService],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
