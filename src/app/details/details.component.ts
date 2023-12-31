@@ -3,11 +3,12 @@ import { ActivatedRoute } from '@angular/router';
 import { MovieService } from '../services/movie-service.service';
 import { MovieDetails } from '../model/movie.model';
 import { CommonModule } from '@angular/common';
+import { CommentsComponent } from '../comments/comments.component';
 
 @Component({
   selector: 'app-details',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, CommentsComponent],
   templateUrl: './details.component.html',
   styleUrl: './details.component.css',
 })
