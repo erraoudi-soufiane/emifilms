@@ -1,0 +1,64 @@
+<div class="movie-detail-header">
+  <!-- Transparent Background -->
+
+  <!-- Container for Content -->
+  <div class="container py-5">
+    <div
+      class="backdrop"
+      style="background: url('https://image.tmdb.org/t/p/original/{{
+        movieDetails.backdrop_path
+      }}') no-repeat center center; background-size: cover;"
+    ></div>
+    <div class="row">
+      <!-- Movie Poster Column -->
+      <div class="col-md-3 movie-poster">
+        <img
+          src="https://image.tmdb.org/t/p/w500/{{ movieDetails.poster_path }}"
+          alt="Poster for {{ movieDetails.original_title }}"
+        />
+      </div>
+
+      <!-- Movie Details Column -->
+      <div class="col-md-8 text-black movie-info">
+        <h1 style="font-weight: bold; color: black">
+          {{ movieDetails.original_title }}
+        </h1>
+        <div class="movie-metadata">
+          <span>{{ movieDetails.release_date }} | </span>
+          <span>
+            <span *ngFor="let genre of movieDetails.genres"
+              >{{ genre.name }} .
+            </span>
+            |
+          </span>
+          <span>{{ movieDetails.runtime }} mn </span>
+        </div>
+
+        <div class="movie-rating">
+          <span class="badge rounded-pill bg-primary" style="margin-right: 10px"
+            >{{ movieDetails.vote_average * 10 }} %
+          </span>
+          <span class="badge rounded-pill bg-primary"
+            >{{ movieDetails.vote_count }} votes</span
+          >
+        </div>
+
+        <div style="margin-top: 10px">
+          <h5 style="font-weight: 600">Tagline</h5>
+          <p class="movie-tagline">{{ movieDetails.tagline }}</p>
+        </div>
+        <div>
+          <h5 style="font-weight: 600">Overview</h5>
+          <p>{{ movieDetails.overview }}</p>
+        </div>
+        <a
+          href="{{ movieDetails.homepage }}"
+          target="_blank"
+          class="btn btn-primary mt-3"
+        >
+          Watch the Movie
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

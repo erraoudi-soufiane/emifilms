@@ -1,0 +1,55 @@
+.movie-detail-header {
+  position: relative;
+  color: #fff;
+}
+
+.backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: inherit;
+  opacity: 0.3; /* Adjust the transparency as needed */
+  z-index: 1;
+}
+
+.movie-poster img {
+  width: 100%;
+  border-radius: 14px;
+  z-index: 2; /* Ensure the poster is above the backdrop */
+  position: relative;
+}
+
+.movie-info {
+  position: relative;
+  z-index: 2; /* Ensure the text is above the backdrop */
+  padding-top: 20px;
+}
+
+.movie-metadata span {
+  font-size: 1.2rem;
+}
+
+.movie-tagline {
+  font-size: 1.2rem;
+}
+
+.movie-rating {
+  margin-top: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .movie-detail-header {
+    padding-top: 20px;
+  }
+
+  .movie-poster img {
+    margin-bottom: 20px;
+  }
+
+  .movie-info {
+    text-align: center;
+  }
+}

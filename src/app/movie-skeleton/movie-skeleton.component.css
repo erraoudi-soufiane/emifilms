@@ -1,0 +1,14 @@
+.movie-component {
+    cursor: pointer;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s ease-in-out;
+    width: 200px ; 
+    border-radius: 20px;
+    margin-bottom: 40px;
+  }
+  
+  .movie-component:hover {
+    transform: scale(1.05);
+  }
+  
