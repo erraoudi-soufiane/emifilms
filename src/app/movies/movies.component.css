@@ -1,10 +1,10 @@
 .card-img-top {
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-  }
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
 
-  .page-link:hover {
-    color: #555; 
-    background-color: #eee; 
-    cursor: pointer; 
-  }
+.page-link:hover {
+  color: #555;
+  background-color: #eee;
+  cursor: pointer;
+}

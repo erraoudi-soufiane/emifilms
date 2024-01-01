@@ -6,7 +6,8 @@ import { Movie, MovieDetails } from '../model/movie.model';
   providedIn: 'root',
 })
 export class MovieService {
-  private apiUrl = 'https://api.themoviedb.org/3/discover/movie';
+  private apiUrlMovie = 'https://api.themoviedb.org/3/discover/movie';
+  private apiUrlTv = 'https://api.themoviedb.org/3/discover/tv';
   private apiKey = 'eb552b3efa84cd7a6d178af28efdf67e';
   private httpOptions = {
     headers: new HttpHeaders({
@@ -25,7 +26,7 @@ export class MovieService {
       sort_by: 'popularity.desc',
     };
 
-    return this.http.get(this.apiUrl, { ...this.httpOptions, params });
+    return this.http.get(this.apiUrlMovie, { ...this.httpOptions, params });
   }
 
   getMovieDetails(id: number) {
@@ -33,9 +34,15 @@ export class MovieService {
     return this.http.get<MovieDetails>(movieDetailsUrl, this.httpOptions);
   }
 
-  getTrending() {
-    const trendingUrl =
-      'https://api.themoviedb.org/3/trending/all/day?language=en-US';
-    return this.http.get(trendingUrl, { ...this.httpOptions });
+  getTvShows(page: number = 1) {
+    const params = {
+      include_adult: 'false',
+      include_null_first_air_dates: 'false',
+      language: 'en-US',
+      page: page.toString(),
+      sort_by: 'popularity.desc',
+    };
+
+    return this.http.get(this.apiUrlTv, { ...this.httpOptions, params });
   }
 }

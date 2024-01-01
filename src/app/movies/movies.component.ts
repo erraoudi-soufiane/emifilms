@@ -51,22 +51,20 @@ export class MoviesComponent implements OnInit {
   }
 
   goToPage(page: number) {
-    this.currentPage = page; // Update the current page
-    this.loadMovies(page); // Load the movies for the selected page
+    this.currentPage = page;
+    this.loadMovies(page);
   }
 
   goToPreviousPage() {
-    // Check if you're not on the first page
     if (this.currentPage > 1) {
-      this.currentPage--; // Decrement the current page number
-      this.loadMovies(this.currentPage); // Load movies for the previous page
+      this.currentPage--;
+      this.loadMovies(this.currentPage);
     }
   }
   goToNextPage() {
-    // Check if the current page is less than the total pages
     if (this.currentPage < this.totalPages) {
-      this.currentPage++; // Increment the current page number
-      this.loadMovies(this.currentPage); // Load movies for the next page
+      this.currentPage++;
+      this.loadMovies(this.currentPage);
     }
   }
 

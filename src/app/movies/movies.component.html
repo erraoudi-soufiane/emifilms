@@ -22,6 +22,7 @@
           >{{ page }}</a
         >
       </li>
+
       <li class="page-item" [class.disabled]="currentPage === totalPages">
         <a class="page-link" (click)="goToNextPage(); $event.preventDefault()"
           >Next</a
