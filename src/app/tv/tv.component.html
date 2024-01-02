@@ -1,4 +1,4 @@
-<div class="movie-component">
+<div class="movie-component" (click)="navigateToDetails()">
   <img
     src="https://image.tmdb.org/t/p/w500/{{ tvShow.poster_path }}"
     style="border-radius: 14px; width: 100%; height: 276px"
@@ -7,7 +7,7 @@
   <div class="">
     <h5>{{ tvShow.original_name }}</h5>
     <small class="text-muted"
-      >{{ tvShow.first_air_date }} · {{ tvShow.vote_average }} · TvShow
+      >{{ tvShow.first_air_date }} · {{ tvShow.vote_average }}/10 · TvShow
     </small>
   </div>
 </div>

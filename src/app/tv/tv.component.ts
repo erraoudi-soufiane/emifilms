@@ -14,7 +14,7 @@ export class TvComponent {
 
   constructor(private router: Router) {}
 
-  // navigateToDetails() {
-  //   this.router.navigate(['/movies', this.tvShow.id]);
-  // }
+  navigateToDetails() {
+    this.router.navigate(['/tv-shows', this.tvShow.id]);
+  }
 }

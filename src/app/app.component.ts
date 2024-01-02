@@ -1,14 +1,16 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterOutlet } from '@angular/router';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { MovieService } from './services/movie-service.service';
+import { DetailsService } from './services/details.service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, RouterOutlet, RouterLink, HttpClientModule],
-  providers: [MovieService],
+  providers: [MovieService, DetailsService],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })

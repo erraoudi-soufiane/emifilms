@@ -63,32 +63,26 @@ export class TvShowsComponent implements OnInit {
 
   generatePageArray(currentPage: number, totalPages: number): number[] {
     let startPage: number, endPage: number;
-    const visiblePages = 5; // Number of pages you want to show in the pagination bar
+    const visiblePages = 5;
 
     if (totalPages <= visiblePages) {
-      // If the total number of pages is less than what you want to show, display them all
       startPage = 1;
       endPage = totalPages;
     } else {
-      // Calculate the start and end page numbers
       const maxPagesBeforeCurrentPage = Math.floor(visiblePages / 2);
       const maxPagesAfterCurrentPage = Math.ceil(visiblePages / 2) - 1;
       if (currentPage <= maxPagesBeforeCurrentPage) {
-        // Near the beginning of the page range
         startPage = 1;
         endPage = visiblePages;
       } else if (currentPage + maxPagesAfterCurrentPage >= totalPages) {
-        // Near the end of the page range
         startPage = totalPages - visiblePages + 1;
         endPage = totalPages;
       } else {
-        // Somewhere in the middle of the page range
         startPage = currentPage - maxPagesBeforeCurrentPage;
         endPage = currentPage + maxPagesAfterCurrentPage;
       }
     }
 
-    // Create an array of pages to ngFor in the pagination control
     let pages: number[] = Array.from(Array(endPage + 1 - startPage).keys()).map(
       (i) => startPage + i
     );
