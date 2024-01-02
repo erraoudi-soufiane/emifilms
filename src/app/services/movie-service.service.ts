@@ -45,4 +45,15 @@ export class MovieService {
 
     return this.http.get(this.apiUrlTv, { ...this.httpOptions, params });
   }
+
+  searchMovies(query: string) {
+    const apiSearchMovie = 'https://api.themoviedb.org/3/search/movie';
+    const params = {
+      include_adult: 'false',
+      language: 'en-US',
+      query: 'avengers',
+      page: '1',
+    };
+    return this.http.get(apiSearchMovie, { ...this.httpOptions, params });
+  }
 }
