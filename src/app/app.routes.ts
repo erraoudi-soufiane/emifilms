@@ -4,6 +4,7 @@ import { TvShowsComponent } from './tv-shows/tv-shows.component';
 import { HomeComponent } from './home/home.component';
 import { DetailsComponent } from './details/details.component';
 import { LoginComponent } from './login/login.component';
+import { FavoritesComponent } from './favorites/favorites.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -12,4 +13,6 @@ export const routes: Routes = [
   { path: 'tv-shows/:id', component: DetailsComponent },
   { path: 'movies/:id', component: DetailsComponent },
   { path: 'login', component: LoginComponent },
+  //{ path: '**', redirectTo: '/'}
+  { path: 'favorites', component: FavoritesComponent },
 ];

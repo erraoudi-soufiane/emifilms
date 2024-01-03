@@ -73,16 +73,29 @@
             <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
         </li>
+        <li class="nav-item" *ngIf="isUserAuthenticated">
+          <a class="nav-link" routerLink="/favorites">Favorites</a>
+        </li>
       </ul>
 
       <div class="d-flex">
         <a
+          *ngIf="!isUserAuthenticated"
           class="btn btn-outline-success"
           routerLink="/login"
           style="border-radius: 12px"
         >
           Login
         </a>
+
+        <div *ngIf="isUserAuthenticated" class="d-flex align-items-center">
+          <span class="navbar-text me-3">
+            Welcome, <strong>{{ username }}</strong>
+          </span>
+          <a class="btn btn-outline-danger btn-sm" (click)="logout()" href="#"
+            >Logout</a
+          >
+        </div>
       </div>
 
       <!-- <form class="d-flex" role="search">

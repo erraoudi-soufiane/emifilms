@@ -15,14 +15,14 @@
   <h2 class="mb-4">Leave a Comment</h2>
   <form (ngSubmit)="onSubmit()">
     <div class="mb-3">
-      <label for="emailInput" class="form-label">Email address</label>
+      <label for="usernameInput" class="form-label">Username</label>
       <input
-        type="email"
+        type="text"
         class="form-control"
-        id="emailInput"
-        placeholder="name@example.com"
+        id="usernameInput"
+        placeholder="Enter your username"
         [(ngModel)]="comment.username"
-        name="email"
+        name="username"
       />
     </div>
     <div class="mb-3">

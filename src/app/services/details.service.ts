@@ -15,6 +15,6 @@ export class DetailsService {
   }
 
   postComment(comment: any): Observable<any> {
-    return this.http.post(`${this.baseUrl}/comments`, comment);
+    return this.http.post(`${this.baseUrl}/comments/add`, comment);
   }
 }

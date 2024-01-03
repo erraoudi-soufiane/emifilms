@@ -7,6 +7,8 @@ import {
   Validators,
 } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { AuthService } from '../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -18,17 +20,34 @@ import { CommonModule } from '@angular/common';
 export class LoginComponent {
   loginForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(
+    private formBuilder: FormBuilder,
+    private authService: AuthService,
+    private router: Router
+  ) {
     this.loginForm = this.formBuilder.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]],
+      username: ['', [Validators.required, Validators.minLength(6)]],
+      password: ['', [Validators.required, Validators.minLength(3)]],
     });
   }
 
   onSubmit() {
     if (this.loginForm.valid) {
+      let username = this.loginForm.value.username;
+      let password = this.loginForm.value.password;
       console.log(this.loginForm.value);
-      // Implement your authentication logic here
+      this.authService.login(username, password).subscribe(
+        (data) => {
+          this.authService.loadProfile(data);
+          this.router.navigate(['/movies']);
+          window.location.href = 'http://localhost:4200/movies'; // Set your specific URL here
+
+          console.log(data);
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
     }
   }
 }

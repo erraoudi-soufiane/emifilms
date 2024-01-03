@@ -8,19 +8,19 @@
         <div class="card-body">
           <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
             <div class="form-group">
-              <label for="email">Email address</label>
+              <label for="username">Username</label>
               <input
-                type="email"
-                formControlName="email"
+                type="text"
+                formControlName="username"
                 class="form-control"
-                id="email"
-                placeholder="Enter email"
+                id="username"
+                placeholder="Enter username"
               />
               <div
-                *ngIf="loginForm.get('email')?.errors"
+                *ngIf="loginForm.get('username')?.errors"
                 class="invalid-feedback"
               >
-                Please provide a valid email.
+                Please provide a valid username.
               </div>
             </div>
             <div class="form-group">
