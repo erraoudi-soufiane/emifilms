@@ -2,17 +2,18 @@ import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { CommonModule } from '@angular/common';
 import { Router, RouterLink, RouterOutlet } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { MovieService } from './services/movie-service.service';
 import { DetailsService } from './services/details.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from './services/auth.service';
+import { FavoritesService } from './services/favorites.service';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, RouterOutlet, RouterLink, HttpClientModule],
-  providers: [MovieService, DetailsService, AuthService],
+  providers: [MovieService, DetailsService, AuthService, FavoritesService],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })

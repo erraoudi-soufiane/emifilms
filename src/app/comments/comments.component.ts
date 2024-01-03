@@ -43,11 +43,9 @@ export class CommentsComponent implements OnInit {
         console.log(this.comment);
         console.log('Comment submitted', response);
         this.getCommentsByMovieId(this.movieId);
-        // Handle successful submission, e.g., clear form, display a message
       },
       (error) => {
         console.error('Error submitting comment', error);
-        // Handle error, e.g., display an error message
       }
     );
   }
